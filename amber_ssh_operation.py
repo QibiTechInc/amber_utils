@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import paramiko
+import sys
 
 
 def ssh_command(ipaddr, command):
@@ -16,6 +17,6 @@ def ssh_command(ipaddr, command):
 
         # 実行結果を表示
         for o in stdout:
-            print('[std]', o, end='')
+            sys.stdout.write('[std]{}'.format(o))
         for e in stderr:
-            print('[err]', e, end='')
+            sys.stdout.write('[err]{}'.format(e))
